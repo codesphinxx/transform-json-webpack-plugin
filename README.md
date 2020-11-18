@@ -1,4 +1,9 @@
 # transform-json-webpack-plugin
+[![npm][npm]][npm-url]
+[![node][node]][node-url]
+[![size][size]][size-url]
+
+
 Webpack plugin to generate a JSON asset file.
 
 
@@ -77,8 +82,8 @@ module.exports = {
       filename: 'package.json',
       source: __dirname + "/package.json",
       object: {
-          devDependencies: {},
-          scripts: {"start": "node index.js"}
+        devDependencies: {},
+        scripts: {"start": "node index.js"}
       }
     })
   ]
@@ -97,4 +102,15 @@ That will generate a file that looks like this:
   "scripts": {"start": "node index.js"}
 }
 ```
+
+## License
+
+[MIT](./LICENSE)
+
+[npm]: https://img.shields.io/npm/v/transform-json-webpack-plugin.svg
+[npm-url]: https://www.npmjs.com/package/transform-json-webpack-plugin
+[node]: https://img.shields.io/node/v/transform-json-webpack-plugin.svg
+[node-url]: https://nodejs.org
+[size]: https://packagephobia.now.sh/badge?p=transform-json-webpack-plugin
+[size-url]: https://packagephobia.com/result?p=transform-json-webpack-plugin
 

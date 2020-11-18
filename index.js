@@ -1,11 +1,16 @@
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
 
 class TransformJsonPlugin 
 {
-    constructor(options) 
+    /**
+     * @param {Object} options 
+     * @param {Object} options.object
+     * @param {String} options.source
+     * @param {String} options.filename
+     */
+    constructor(options = {}) 
     {
-        this.pluginName = 'TransformJsonFile';
+        this.pluginName = 'TransformJsonPlugin';
         this.options = options || {};
         this.options.object = options.object || {};
         this.options.source = options.source || '';
@@ -21,13 +26,13 @@ class TransformJsonPlugin
     apply(compiler) 
     {
         const emit = (compilation, callback) => {
-            var merged = Object.assign({}, this._source, this.options.object);
-            var json = JSON.stringify(merged, null, 2);
+            let merged = Object.assign({}, this._source, this.options.object);
+            let json = JSON.stringify(merged, null, 2);
             
             compilation.assets[this.options.filename] = {
-            source: function() { return json; },
-            size: function() { return json.length; }
-            }
+                source: function() { return json; },
+                size: function() { return json.length; }
+            };
 
             callback();
         };

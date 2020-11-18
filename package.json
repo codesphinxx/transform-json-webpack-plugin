@@ -1,6 +1,6 @@
 {
   "name": "transform-json-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Webpack plugin to generate a JSON asset file",
   "author": "Code Sphinx <https://twitter.com/codesphinx>",
   "license": "MIT",
@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "test": "npm run lint && npm run jest"
   },
+  "engines": {
+    "node": ">= 10.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codesphinxx/transform-json-webpack-plugin.git"
@@ -18,22 +21,16 @@
     "webpack",
     "plugin",
     "json",
-    "json-edit"
+    "json-edit",
+    "json-transform"
   ],
   "bugs": {
     "url": "https://github.com/codesphinxx/transform-json-webpack-plugin/issues"
   },
   "homepage": "https://github.com/codesphinxx/transform-json-webpack-plugin#readme",
-  "jest": {
-    "testEnvironment": "node",
-    "roots": [
-      "<rootDir>/sample"
-    ]
-  },
   "devDependencies": {
-    "eslint": "^5.8.0",
-    "jest": "^23.6.0",
-    "webpack": "^4.24.0"
+    "eslint": "^7.13.0",
+    "webpack": "^5.5.1"
   },
   "dependencies": {}
 }
